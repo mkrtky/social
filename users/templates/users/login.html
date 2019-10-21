@@ -1,0 +1,23 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <section class="section">
+                    <div class="container">
+                        <div class="box">
+                            <div class="columns is-centered">
+                                <div class="column is-half">
+                                    {{ form | crispy }} 
+                                    <button class="button is-success"type="submit"> login </button>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+        </form>
+    </div>
+
+
+{% endblock content %}
