@@ -8,13 +8,16 @@
     <section class="section">
         <div class="container">
                 <div class="columns is-centered">
+                        <figure class="image is-128x128">
+                                <img class="img is-rounded" src="{{ user.profile.image.url }}">
+                        </figure>
                     <div class="box">
-                    <div class="column is-three-quarters">
+                        
+                        <div class="column is-full">
                         {{ u_form|crispy }}
                         {{ p_form|crispy }}
                         <button class="button is-success"type="submit"> update profile </button>
                     </div>
-
                     </div>
             </div>
         </div>
