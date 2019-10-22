@@ -1,0 +1,13 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+
+    {% for post in posts %}
+        
+        {{post.title}}
+        {{post.content}}
+        {{post.date_posted}}
+        {{post.author}}
+
+    {% endfor %}
+{% block content %}
+{% endblock content %}

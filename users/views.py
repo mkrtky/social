@@ -5,10 +5,6 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegisterForm,  UserUpdateForm, ProfileUpdateForm
 
 
-def home(request):
-    return render(request,'users/base.html')
-
-
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
