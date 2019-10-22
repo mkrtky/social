@@ -1,13 +1,35 @@
 {% extends "users/base.html" %}
 {% load crispy_forms_tags %}
+{% block content %}
 
     {% for post in posts %}
+    <div class="container">
+            <section class="articles">
+                <div class="column is-8 is-offset-2">
+                    <div class="card article">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-center">
+                                    <img src="{{ post.author.profile.image.url }}" class="author-image" alt="Placeholder image">
+                                </div>
+                                <div class="media-content has-text-centered">
+                                    <p class="title article-title">{{ post.title }}</p>
+                                    <p class="subtitle is-6 article-subtitle">
+                                        <a href="#">{{ post.author }}</a> {{ post.date_posted|date:" d F, Y" }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content article-body">
+                                <p>
+                                    {{ post.content }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </div>
         
-        {{post.title}}
-        {{post.content}}
-        {{post.date_posted}}
-        {{post.author}}
 
     {% endfor %}
-{% block content %}
 {% endblock content %}
