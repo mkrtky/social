@@ -1,8 +1,5 @@
 {% extends "users/base.html" %}
-{% load crispy_forms_tags %}
 {% block content %}
-
-    {% for post in posts %}
     <div class="container">
             <section class="articles">
                 <div class="column is-8 is-offset-2">
@@ -16,7 +13,6 @@
                                     <p class="title article-title">{{ post.title }}</p>
                                     <p class="subtitle is-6 article-subtitle">
                                         <a href="#">{{ post.author }}</a> {{ post.date_posted|date:" d F, Y" }}
-                                        <a href="{% url 'post-detail' post.id %}">detail view</a>
                                     </p>
                                 </div>
                             </div>
@@ -30,7 +26,4 @@
                 </div>
             </section>
     </div>
-        
-
-    {% endfor %}
 {% endblock content %}
