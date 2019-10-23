@@ -1,0 +1,19 @@
+{% extends "users/base.html" %}
+{% block content %}
+<form method="POST">
+<section class="section">
+    <div class="container">
+            <div class="columns is-centered">
+                <div class="box">
+                <div class="column is-full">
+                    {% csrf_token }
+                   <h2>You want to delete this post ?</h2>
+                   <button type="submit" class="is-rounded is-danger">YES</button>
+                   <button class="is-rounded" href="{% url 'post-detail' object.id %}">CANCEL</button>
+                </div>
+                </div>
+        </div>
+    </div>
+</section>
+</form>
+{% endblock content %}
